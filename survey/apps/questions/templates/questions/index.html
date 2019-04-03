@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'questions/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <form action='/surveys' method='post'>
+            {% csrf_token %}
+            Name:<input type='text' name='name'> <br>
+            Dojo Location: <select name="Dojo_location">
+                <option value="San_jose">San Jose</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Chicago">Chicago</option>
+                <option value="S.Francisco">S.Francisco</option>
+            </select><br>
+            Favorite Lenguage: <select name="Fav_lang">
+                <option value="Python">Python</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Ruby">Ruby</option>
+            </select><br>
+            Comment(optional):<textarea name="message" rows="10" cols="30"></textarea>
+            <input type='submit' value='Button'>
+         </form>
+    </div>   
+</body>
+</html>
